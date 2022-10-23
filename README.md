@@ -1,2 +1,2 @@
-# desafios-aula
-alguns desafios propostos em sala de aula deito sem auxilio de outros meios, totalmente do zero.
+# Desafios
+alguns desafios propostos em sala de aula sem auxilio de outras fontes, totalmente do zero.
