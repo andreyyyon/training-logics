@@ -15,13 +15,14 @@ public class BankSystem {
 
         while (decisao == 0) {
             System.out.println("Seja bem-vindo ao Banco, digite seu usuario e sua senha:");
-            if (con.login(entrada.next(), entrada.next()) == true) {
+            boolean login = con.login(entrada.next(), entrada.next());
+            while (login == false) {
+                System.out.println("Usuario ou senha incorretos, tente novamente:");
+                login = con.login(entrada.next(), entrada.next());
+            }if(login == true){
+                System.out.println("Acesso liberado.");
                 decisao = 1;
-            } else {
-                System.out.println("Usuario ou senha incorretos!");
-                decisao = 0;
             }
-
 
             while (decisao == 1) {
                 System.out.println(" ");

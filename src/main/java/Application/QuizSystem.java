@@ -15,47 +15,71 @@ public class QuizSystem {
         System.out.println("Bem-vindo " + nome);
         System.out.println("Quiz - Frutas");
 
-        System.out.println("A) Qual a cor da banana?");
-        System.out.println("1- Amarela" +
-                "\n2- Verde" +
-                "\n3- Azul" +
-                "\n4- Roxa"
-        );
-        int escolha1 = entrada.nextInt();
-        if(escolha1 == 1){
-            total = total + 1;
-            System.out.println("Acertou.");
-        }else{
-            System.out.println("Errou.");
+        int pergunta = 1;
+
+        while(pergunta == 1) {
+            System.out.println("A) Qual a cor da banana?");
+            System.out.println("1- Amarela" +
+                    "\n2- Verde" +
+                    "\n3- Azul" +
+                    "\n4- Roxa"
+            );
+            String escolha1 = entrada.next();
+            if (escolha1.equals("1")) {
+                total = total + 1;
+                System.out.println("Acertou.");
+                pergunta = 2;
+            } else if (escolha1.equals("2") || escolha1.equals("3") || escolha1.equals("4")){
+                System.out.println("Errou.");
+                pergunta = 2;
+            }else{
+                System.out.println("Nenhuma alternativa correspondente a resposta.");
+                pergunta = 1;
+            }
         }
 
-        System.out.println("=================================");
-        System.out.println("B) Qual desses alimentos não é uma fruta?");
-        System.out.println("1- Abacaxi." +
-                "\n2- Laranja." +
-                "\n3- Tomate." +
-                "\n4- Repolho."
-        );
-        int escolha2 = entrada.nextInt();
-        if( escolha2 == 4){
-            total = total + 1;
-            System.out.println("Acertou.");
-        }else{
-            System.out.println("Errou.");
+        while (pergunta == 2) {
+            System.out.println("=================================");
+            System.out.println("B) Qual desses alimentos não é uma fruta?");
+            System.out.println("1- Abacaxi." +
+                    "\n2- Laranja." +
+                    "\n3- Tomate." +
+                    "\n4- Repolho."
+            );
+            String escolha2 = entrada.next();
+            if (escolha2.equals("4")) {
+                total = total + 1;
+                System.out.println("Acertou.");
+                pergunta = 3;
+            } else if (escolha2.equals("2") || escolha2.equals("3") || escolha2.equals("4")){
+                System.out.println("Errou.");
+                pergunta = 3;
+            }else{
+                System.out.println("Nenhuma alternativa correspondente a resposta.");
+                pergunta = 2;
+            }
         }
-        System.out.println("==================================");
-        System.out.println("C) Quem é i rei das frutas?");
-        System.out.println("1- Morango." +
-                "\n2- Abacaxi." +
-                "\n3- Uva." +
-                "\n4- Pitaia."
-        );
-        int escolha3 = entrada.nextInt();
-        if(escolha3 == 2){
-            total = total + 1;
-            System.out.println("Acertou.");
-        }else{
-            System.out.println("Errou.");
+
+        while (pergunta == 3) {
+            System.out.println("==================================");
+            System.out.println("C) Quem é o rei das frutas?");
+            System.out.println("1- Morango." +
+                    "\n2- Abacaxi." +
+                    "\n3- Uva." +
+                    "\n4- Pitaia."
+            );
+            String escolha3 = entrada.next();
+            if (escolha3.equals("2")) {
+                total = total + 1;
+                System.out.println("Acertou.");
+                pergunta = 0;
+            } else if (escolha3.equals("1") || escolha3.equals("3") || escolha3.equals("4")){
+                System.out.println("Errou.");
+                pergunta = 0;
+            }else{
+                System.out.println("Nenhuma alternativa correspondente a resposta.");
+                pergunta = 3;
+            }
         }
         System.out.println("====================================");
         System.out.println("Você acertou um total de " + total + " pontos.");
